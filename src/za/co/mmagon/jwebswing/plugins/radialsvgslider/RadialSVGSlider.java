@@ -20,6 +20,7 @@ import za.co.mmagon.jwebswing.base.html.*;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListCSS;
 import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListStyleType;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  * An implementation of the Radial SVG Slider.
@@ -30,6 +31,7 @@ import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListStyleType;
  * @since 29 Aug 2015
  * @version 1.0
  */
+@ComponentInformation(name = "Radial SVG Slider Gem", description = "A carousel-like slider that animates the screen changes in a radial fashion", url = "https://codyhouse.co/demo/radial-svg-slider/index.html")
 public class RadialSVGSlider extends Div<RadialSVGSliderChildren, RadialSVGSliderAttributes, RadialSVGSliderFeatures, RadialSVGSliderEvents, RadialSVGSlider>
 {
 
