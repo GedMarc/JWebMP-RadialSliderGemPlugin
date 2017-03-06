@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -36,7 +36,7 @@ import za.co.mmagon.jwebswing.plugins.PluginInformation;
                    pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-RadialSliderGemPlugin/wiki",
                    pluginOriginalHomepage = "https://codyhouse.co/gem/radial-svg-slider/",
                    pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/RadialSliderGemPlugin.jar/download",
-                   pluginIconUrl = "bower_components/radial-svg-slider-jwebswing/logo.jpg",
+                   pluginIconUrl = "bower_components/radial-svg-slider-jwebswing/example.png",
                    pluginIconImageUrl = "bower_components/radial-svg-slider-jwebswing/example.png",
                    pluginLastUpdatedDate = "2017/03/04"
 )
