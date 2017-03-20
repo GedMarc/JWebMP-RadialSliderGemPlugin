@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,7 @@
 package za.co.mmagon.jwebswing.plugins.radialsvgslider;
 
 import za.co.mmagon.jwebswing.base.html.*;
+import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
 import za.co.mmagon.jwebswing.utilities.*;
 
 /**
@@ -69,7 +70,7 @@ public class RadialSVGSliderListItem extends ListItem
             {
                 getContent(); //force the build of the wrapper
             }
-            getPage().getOptions().setjQueryEnabled(true);
+            JQueryPageConfigurator.setRequired(this, true);
         }
 
         super.preConfigure();
