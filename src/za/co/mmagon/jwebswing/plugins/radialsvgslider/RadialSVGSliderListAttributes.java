@@ -19,36 +19,32 @@ package za.co.mmagon.jwebswing.plugins.radialsvgslider;
 import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 
 /**
- *
  * @author GedMarc
- * @since Oct 24, 2016
  * @version 1.0
- * 
+ * @since Oct 24, 2016
  */
 public enum RadialSVGSliderListAttributes implements AttributeDefinitions
 {
-    Radius1("data-radius1"),
-    Radius2("data-radius2"),
-    CenterX1("data-centerx1"),
-    CenterX2("data-centerx2")
-    
-    ;
-    private final String name;
-    
-    private RadialSVGSliderListAttributes (String name)
-    {
-        this.name = name;
-    }
+	Radius1("data-radius1"),
+	Radius2("data-radius2"),
+	CenterX1("data-centerx1"),
+	CenterX2("data-centerx2");
+	private final String name;
 
-    @Override
-    public boolean isKeyword()
-    {
-        return false;
-    }
+	private RadialSVGSliderListAttributes(String name)
+	{
+		this.name = name;
+	}
 
-    @Override
-    public String toString()
-    {
-        return name;
-    }
+	@Override
+	public boolean isKeyword()
+	{
+		return false;
+	}
+
+	@Override
+	public String toString()
+	{
+		return name;
+	}
 }

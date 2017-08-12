@@ -28,42 +28,41 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
  */
 public enum SnapSVGReferencePool implements ReferencePool
 {
-    SnapSVG(new JavascriptReference("AdobeSnapSVG", 0.41, "bower_components/Snap.svg/dist/snap.svg.js",15),null);
-    ;
-    private SnapSVGReferencePool()
-    {
-    }
+	SnapSVG(new JavascriptReference("AdobeSnapSVG", 0.41, "bower_components/Snap.svg/dist/snap.svg.js", 15), null);;
 
-    private JavascriptReference javaScriptReference;
-    private CSSReference cssReference;
+	private JavascriptReference javaScriptReference;
+	private CSSReference cssReference;
+	private SnapSVGReferencePool()
+	{
+	}
 
-    private SnapSVGReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-        this.cssReference = cssReference;
-    }
+	private SnapSVGReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+		this.cssReference = cssReference;
+	}
 
-    @Override
-    public JavascriptReference getJavaScriptReference()
-    {
-        return javaScriptReference;
-    }
+	@Override
+	public JavascriptReference getJavaScriptReference()
+	{
+		return javaScriptReference;
+	}
 
-    @Override
-    public void setJavaScriptReference(JavascriptReference javaScriptReference)
-    {
-        this.javaScriptReference = javaScriptReference;
-    }
+	@Override
+	public void setJavaScriptReference(JavascriptReference javaScriptReference)
+	{
+		this.javaScriptReference = javaScriptReference;
+	}
 
-    @Override
-    public CSSReference getCssReference()
-    {
-        return cssReference;
-    }
+	@Override
+	public CSSReference getCssReference()
+	{
+		return cssReference;
+	}
 
-    @Override
-    public void setCssReference(CSSReference cssReference)
-    {
-        this.cssReference = cssReference;
-    }
+	@Override
+	public void setCssReference(CSSReference cssReference)
+	{
+		this.cssReference = cssReference;
+	}
 }

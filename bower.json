@@ -17,6 +17,6 @@
     "tests"
   ],
   "dependencies": {
-	"radial-svg-slider-jwebswing": "*"
+    "radial-svg-slider-jwebswing": "*"
   }
 }

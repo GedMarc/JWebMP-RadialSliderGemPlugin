@@ -16,55 +16,52 @@
  */
 package za.co.mmagon.jwebswing.plugins.radialsvgslider;
 
-import za.co.mmagon.jwebswing.plugins.radialsvgslider.RadialSVGSlider;
-import za.co.mmagon.jwebswing.plugins.radialsvgslider.RadialSVGSliderListItem;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.base.html.Div;
 
 /**
- *
  * @author GedMarc
  */
 public class RadialSVGSliderTest extends BaseTestClass
 {
-    
-    public RadialSVGSliderTest()
-    {
-    }
 
-    @Test
-    public void testStructure()
-    {
-        RadialSVGSlider slider = new RadialSVGSlider();
-        System.out.println(slider.toString(true));
-    }
-    
-    @Test
-    public void testFaces()
-    {
-        RadialSVGSlider slider = new RadialSVGSlider();
-        slider.addFace(new Div(),"bower_components/radial-svg-slider-jwebswing/img/img-1.jpg");
-        slider.addFace(new Div(),"bower_components/radial-svg-slider-jwebswing/img/img-2.jpg");
-        System.out.println(slider.toString(true));
-    }
-    
-    @Test
-    public void testDefaultSlide()
-    {
-        RadialSVGSlider slider = new RadialSVGSlider();
-        slider.addFace(new Div(),"bower_components/radial-svg-slider-jwebswing/img/img-1.jpg");
-        slider.addFace(RadialSVGSliderListItem.createDefaultSlide("Slide 2", "This is slide 2", "#0", "Learn More"));
-        System.out.println(slider.toString(true));
-    }
-    
-    @Test
-    public void testReferences()
-    {
-        Page p = getInstance();
-        p.getBody().add(new RadialSVGSlider());
-        System.out.println(p.toString(true));
-    }
-    
+	public RadialSVGSliderTest()
+	{
+	}
+
+	@Test
+	public void testStructure()
+	{
+		RadialSVGSlider slider = new RadialSVGSlider();
+		System.out.println(slider.toString(true));
+	}
+
+	@Test
+	public void testFaces()
+	{
+		RadialSVGSlider slider = new RadialSVGSlider();
+		slider.addFace(new Div(), "bower_components/radial-svg-slider-jwebswing/img/img-1.jpg");
+		slider.addFace(new Div(), "bower_components/radial-svg-slider-jwebswing/img/img-2.jpg");
+		System.out.println(slider.toString(true));
+	}
+
+	@Test
+	public void testDefaultSlide()
+	{
+		RadialSVGSlider slider = new RadialSVGSlider();
+		slider.addFace(new Div(), "bower_components/radial-svg-slider-jwebswing/img/img-1.jpg");
+		slider.addFace(RadialSVGSliderListItem.createDefaultSlide("Slide 2", "This is slide 2", "#0", "Learn More"));
+		System.out.println(slider.toString(true));
+	}
+
+	@Test
+	public void testReferences()
+	{
+		Page p = getInstance();
+		p.getBody().add(new RadialSVGSlider());
+		System.out.println(p.toString(true));
+	}
+
 }

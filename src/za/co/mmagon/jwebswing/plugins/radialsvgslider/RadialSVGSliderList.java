@@ -25,18 +25,17 @@ import za.co.mmagon.jwebswing.htmlbuilder.css.padding.PaddingCSS;
  * The data attributes for the radial
  *
  * @author GedMarc
- * @since Oct 24, 2016
  * @version 1.0
- *
+ * @since Oct 24, 2016
  */
 @PaddingCSS(PaddingLeft = @MeasurementCSS(0))
 public class RadialSVGSliderList extends List<ListChildren, RadialSVGSliderListAttributes, RadialSVGSliderEvents, RadialSVGSliderList> implements RadialSVGSliderChildren
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public RadialSVGSliderList()
-    {
+	public RadialSVGSliderList()
+	{
 
-    }
+	}
 }
