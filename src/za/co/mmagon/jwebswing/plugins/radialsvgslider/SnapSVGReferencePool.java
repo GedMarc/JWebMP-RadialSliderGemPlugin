@@ -28,15 +28,16 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
  */
 public enum SnapSVGReferencePool implements ReferencePool
 {
-	SnapSVG(new JavascriptReference("AdobeSnapSVG", 0.41, "bower_components/Snap.svg/dist/snap.svg.js", 15), null);;
-
+	SnapSVG(new JavascriptReference("AdobeSnapSVG", 0.41, "bower_components/Snap.svg/dist/snap.svg.js", 15), null);
+	
 	private JavascriptReference javaScriptReference;
 	private CSSReference cssReference;
-	private SnapSVGReferencePool()
+	
+	SnapSVGReferencePool()
 	{
 	}
-
-	private SnapSVGReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	
+	SnapSVGReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
 	{
 		this.javaScriptReference = javaScriptReference;
 		this.cssReference = cssReference;

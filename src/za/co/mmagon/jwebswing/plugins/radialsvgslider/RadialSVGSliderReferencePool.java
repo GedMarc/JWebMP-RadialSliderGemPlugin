@@ -29,15 +29,16 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
 public enum RadialSVGSliderReferencePool implements ReferencePool
 {
 	RadialSVG(new JavascriptReference("RadialSVGJs", 1.0, "bower_components/radial-svg-slider-jwebswing/js/main.js", 20),
-	          new CSSReference("RadialSVGCSS", 1.0, "bower_components/radial-svg-slider-jwebswing/css/style.css", 20));;
-
+	          new CSSReference("RadialSVGCSS", 1.0, "bower_components/radial-svg-slider-jwebswing/css/style.css", 20));
+	
 	private JavascriptReference javaScriptReference;
 	private CSSReference cssReference;
-	private RadialSVGSliderReferencePool()
+	
+	RadialSVGSliderReferencePool()
 	{
 	}
-
-	private RadialSVGSliderReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	
+	RadialSVGSliderReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
 	{
 		this.javaScriptReference = javaScriptReference;
 		this.cssReference = cssReference;
