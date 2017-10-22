@@ -28,16 +28,16 @@ import za.co.mmagon.jwebswing.utilities.GUIDGenerator;
  */
 public class RadialSVGSliderListItem extends ListItem
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * The background image URL to use
 	 */
 	private String faceBackgroundImageUrl = "bower_components/radial-svg-slider-jwebswing/img/img-1.jpg";
 	private String clipPathUniqueID;
 	private String circleUniqueID;
-	
+
 	/**
 	 * The content container
 	 */
@@ -51,7 +51,7 @@ public class RadialSVGSliderListItem extends ListItem
 	 */
 	private Div content;
 	private boolean rendered;
-	
+
 	/**
 	 * Constructs a new face (list item) for the Radial SVG Slider
 	 */
@@ -60,14 +60,18 @@ public class RadialSVGSliderListItem extends ListItem
 		clipPathUniqueID = GUIDGenerator.generateGuid();
 		circleUniqueID = GUIDGenerator.generateGuid();
 	}
-	
+
 	/**
 	 * Creates a default slide
 	 *
-	 * @param headerText  The header text of the slide
-	 * @param defaultText The default text of the slide
-	 * @param linkUrl     The link for the main button
-	 * @param linkText    the text for the link
+	 * @param headerText
+	 * 		The header text of the slide
+	 * @param defaultText
+	 * 		The default text of the slide
+	 * @param linkUrl
+	 * 		The link for the main button
+	 * @param linkText
+	 * 		the text for the link
 	 *
 	 * @return
 	 */
@@ -79,13 +83,13 @@ public class RadialSVGSliderListItem extends ListItem
 		Link newLink = new Link(linkUrl);
 		newLink.addClass("cd-btn");
 		newLink.setText(linkText);
-		
+
 		d.add(hText);
 		d.add(p);
 		d.add(newLink);
 		return d;
 	}
-	
+
 	@Override
 	public void preConfigure()
 	{
@@ -97,10 +101,10 @@ public class RadialSVGSliderListItem extends ListItem
 			}
 			JQueryPageConfigurator.setRequired(this, true);
 		}
-		
+
 		super.preConfigure();
 	}
-	
+
 	/**
 	 * Generates the SVG syntax for the face
 	 *
@@ -131,7 +135,7 @@ public class RadialSVGSliderListItem extends ListItem
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Returns the background image URL assigned
 	 *
@@ -141,7 +145,7 @@ public class RadialSVGSliderListItem extends ListItem
 	{
 		return faceBackgroundImageUrl;
 	}
-	
+
 	/**
 	 * Sets the face background image URL
 	 *
@@ -151,7 +155,7 @@ public class RadialSVGSliderListItem extends ListItem
 	{
 		this.faceBackgroundImageUrl = faceBackgroundImageUrl;
 	}
-	
+
 	/**
 	 * Returns the contentContainer div. Never Null
 	 *
@@ -165,7 +169,7 @@ public class RadialSVGSliderListItem extends ListItem
 		}
 		return contentContainer;
 	}
-	
+
 	/**
 	 * Sets the contentContainer Div
 	 *
@@ -180,7 +184,7 @@ public class RadialSVGSliderListItem extends ListItem
 			add(contentContainer);
 		}
 	}
-	
+
 	/**
 	 * Returns the contentContainer wrapper
 	 *
@@ -194,7 +198,7 @@ public class RadialSVGSliderListItem extends ListItem
 		}
 		return contentWrapper;
 	}
-	
+
 	/**
 	 * Sets the contentContainer wrapper
 	 *
@@ -209,7 +213,7 @@ public class RadialSVGSliderListItem extends ListItem
 			getContentContainer().add(this.contentWrapper);
 		}
 	}
-	
+
 	/**
 	 * Returns the content. Never null
 	 *
@@ -223,7 +227,7 @@ public class RadialSVGSliderListItem extends ListItem
 		}
 		return content;
 	}
-	
+
 	/**
 	 * Sets the content.
 	 *
@@ -237,7 +241,7 @@ public class RadialSVGSliderListItem extends ListItem
 			getContentWrapper().add(this.content);
 		}
 	}
-	
+
 	/**
 	 * Returns the current id given to the clip path element
 	 *
@@ -247,7 +251,7 @@ public class RadialSVGSliderListItem extends ListItem
 	{
 		return clipPathUniqueID;
 	}
-	
+
 	/**
 	 * Sets the unique id given to the clip path element
 	 *
@@ -257,7 +261,7 @@ public class RadialSVGSliderListItem extends ListItem
 	{
 		this.clipPathUniqueID = clipPathUniqueID;
 	}
-	
+
 	/**
 	 * Gets the unique id assigned to the circles
 	 *
@@ -267,7 +271,7 @@ public class RadialSVGSliderListItem extends ListItem
 	{
 		return circleUniqueID;
 	}
-	
+
 	/**
 	 * Sets the assigned numbers to the circles
 	 *
@@ -277,5 +281,63 @@ public class RadialSVGSliderListItem extends ListItem
 	{
 		this.circleUniqueID = circleUniqueID;
 	}
-	
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof RadialSVGSliderListItem))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		RadialSVGSliderListItem that = (RadialSVGSliderListItem) o;
+
+		if (rendered != that.rendered)
+		{
+			return false;
+		}
+		if (getFaceBackgroundImageUrl() != null ? !getFaceBackgroundImageUrl().equals(that.getFaceBackgroundImageUrl()) : that.getFaceBackgroundImageUrl() != null)
+		{
+			return false;
+		}
+		if (!getClipPathUniqueID().equals(that.getClipPathUniqueID()))
+		{
+			return false;
+		}
+		if (getCircleUniqueID() != null ? !getCircleUniqueID().equals(that.getCircleUniqueID()) : that.getCircleUniqueID() != null)
+		{
+			return false;
+		}
+		if (!getContentContainer().equals(that.getContentContainer()))
+		{
+			return false;
+		}
+		if (!getContentWrapper().equals(that.getContentWrapper()))
+		{
+			return false;
+		}
+		return getContent().equals(that.getContent());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + (getFaceBackgroundImageUrl() != null ? getFaceBackgroundImageUrl().hashCode() : 0);
+		result = 31 * result + getClipPathUniqueID().hashCode();
+		result = 31 * result + (getCircleUniqueID() != null ? getCircleUniqueID().hashCode() : 0);
+		result = 31 * result + getContentContainer().hashCode();
+		result = 31 * result + getContentWrapper().hashCode();
+		result = 31 * result + getContent().hashCode();
+		result = 31 * result + (rendered ? 1 : 0);
+		return result;
+	}
 }

@@ -24,24 +24,18 @@ import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 public enum RadialSVGSliderAttributes implements AttributeDefinitions
 {
 	Visibility;
-	
-	private boolean isKeyword;
-	
-	private RadialSVGSliderAttributes()
+
+	RadialSVGSliderAttributes()
 	{
 	}
-	
-	private RadialSVGSliderAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
+
+
 	@Override
 	public boolean isKeyword()
 	{
-		return isKeyword;
+		return false;
 	}
-	
+
 	/**
 	 * Returns the attribute name replacing all underscores with dashes and all dollar signs to empty
 	 *

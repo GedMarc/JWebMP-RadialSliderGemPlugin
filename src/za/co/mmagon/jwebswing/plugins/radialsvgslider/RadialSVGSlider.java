@@ -17,13 +17,12 @@
 package za.co.mmagon.jwebswing.plugins.radialsvgslider;
 
 import za.co.mmagon.jwebswing.base.html.Div;
-import za.co.mmagon.jwebswing.base.html.H2;
-import za.co.mmagon.jwebswing.base.html.Link;
-import za.co.mmagon.jwebswing.base.html.Paragraph;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListCSS;
 import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListStyleType;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * An implementation of the Radial SVG Slider.
@@ -38,50 +37,26 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 @ComponentInformation(name = "Radial SVG Slider Gem", description = "A carousel-like slider that animates the screen changes in a radial fashion", url = "https://codyhouse.co/demo/radial-svg-slider/index.html")
 public class RadialSVGSlider extends Div<RadialSVGSliderChildren, RadialSVGSliderAttributes, RadialSVGSliderFeatures, RadialSVGSliderEvents, RadialSVGSlider>
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	private RadialSVGSliderFeature feature;
-	
+
 	@ListCSS(ListStyleType = ListStyleType.none)
-	
+
 	private RadialSVGSliderList radialSliderList;
-	
+
 	public RadialSVGSlider()
 	{
 		addFeature(getFeature());
 		addClass("cd-radial-slider-wrapper");
 		addAttribute(GlobalAttributes.Style, "margin-top: 0px;margin-bottom: 0px;");
 	}
-	
-	/**
-	 * Creates a default slide
-	 *
-	 * @param headerText  The header text of the slide
-	 * @param defaultText The default text of the slide
-	 * @param linkUrl     The link for the main button
-	 * @param linkText    the text for the link
-	 *
-	 * @return
-	 */
-	public static Div createDefaultSlide(String headerText, String defaultText, String linkUrl, String linkText)
-	{
-		Div d = new Div();
-		H2 hText = new H2(headerText);
-		Paragraph p = new Paragraph(defaultText);
-		Link newLink = new Link(linkUrl);
-		newLink.addClass("cd-btn");
-		newLink.setText(linkText);
-		
-		d.add(hText);
-		d.add(p);
-		d.add(newLink);
-		return d;
-	}
-	
+
 	/**
 	 * Adds a face to this
 	 *
-	 * @param content The content div to add
+	 * @param content
+	 * 		The content div to add
 	 *
 	 * @return
 	 */
@@ -89,12 +64,14 @@ public class RadialSVGSlider extends Div<RadialSVGSliderChildren, RadialSVGSlide
 	{
 		return addFace(content, "");
 	}
-	
+
 	/**
 	 * Adds a face to this
 	 *
-	 * @param content       The content div to add
-	 * @param backgroundUrl The background image URL to apply
+	 * @param content
+	 * 		The content div to add
+	 * @param backgroundUrl
+	 * 		The background image URL to apply
 	 *
 	 * @return
 	 */
@@ -109,12 +86,13 @@ public class RadialSVGSlider extends Div<RadialSVGSliderChildren, RadialSVGSlide
 		getRadialSliderList().add(li);
 		return li;
 	}
-	
+
 	/**
 	 * Returns the radial slider list
 	 *
 	 * @return
 	 */
+	@NotNull
 	public RadialSVGSliderList getRadialSliderList()
 	{
 		if (radialSliderList == null)
@@ -123,7 +101,7 @@ public class RadialSVGSlider extends Div<RadialSVGSliderChildren, RadialSVGSlide
 		}
 		return radialSliderList;
 	}
-	
+
 	/**
 	 * Sets the radial slider list
 	 *
@@ -144,7 +122,7 @@ public class RadialSVGSlider extends Div<RadialSVGSliderChildren, RadialSVGSlide
 			add(this.radialSliderList);
 		}
 	}
-	
+
 	/**
 	 * Renders the default stuff that doesn't need to be built
 	 *
@@ -173,7 +151,7 @@ public class RadialSVGSlider extends Div<RadialSVGSliderChildren, RadialSVGSlide
 				                         + getCurrentTabIndentString() + "\t" + "\t" + "</svg>" + getNewLine()
 				                         + getCurrentTabIndentString() + "\t" + "</div>");
 	}
-	
+
 	/**
 	 * Sets the classes correctly on the children
 	 */
@@ -195,7 +173,7 @@ public class RadialSVGSlider extends Div<RadialSVGSliderChildren, RadialSVGSlide
 		}
 		super.preConfigure();
 	}
-	
+
 	public final RadialSVGSliderFeature getFeature()
 	{
 		if (feature == null)
@@ -204,11 +182,44 @@ public class RadialSVGSlider extends Div<RadialSVGSliderChildren, RadialSVGSlide
 		}
 		return feature;
 	}
-	
+
 	@Override
 	public RadialSVGSliderOptions getOptions()
 	{
 		return getFeature().getOptions();
 	}
-	
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof RadialSVGSlider))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		RadialSVGSlider that = (RadialSVGSlider) o;
+
+		if (!getFeature().equals(that.getFeature()))
+		{
+			return false;
+		}
+		return getRadialSliderList().equals(that.getRadialSliderList());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		result = 31 * result + getRadialSliderList().hashCode();
+		return result;
+	}
 }

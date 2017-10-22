@@ -68,5 +68,35 @@ public class RadialSVGSliderFeature extends Feature<RadialSVGSliderOptions, Radi
 	@Override
 	public void assignFunctionsToComponent()
 	{
+		//Nothing Needed
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof RadialSVGSliderFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		RadialSVGSliderFeature that = (RadialSVGSliderFeature) o;
+
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
 	}
 }

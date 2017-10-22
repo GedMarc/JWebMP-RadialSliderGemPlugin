@@ -36,6 +36,6 @@ public class RadialSVGSliderList extends List<ListChildren, RadialSVGSliderListA
 
 	public RadialSVGSliderList()
 	{
-
+		//Basic List no configuration needed
 	}
 }

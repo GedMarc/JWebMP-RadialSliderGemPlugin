@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.radialsvgslider;
 
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
 /**
  * All the options for the tooltip library
@@ -25,24 +24,17 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
  *
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 4, 2015
  */
-public class RadialSVGSliderOptions extends JavaScriptPart
+class RadialSVGSliderOptions extends JavaScriptPart
 {
 
 	private static final long serialVersionUID = 1L;
 
-	public RadialSVGSliderOptions()
+	RadialSVGSliderOptions()
 	{
-
+		//nothing needed
 	}
-
-	@Override
-	public JavascriptPartType getJavascriptType()
-	{
-		return JavascriptPartType.Javascript;
-	}
-
 }
