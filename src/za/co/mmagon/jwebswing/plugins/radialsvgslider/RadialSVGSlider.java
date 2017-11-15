@@ -16,6 +16,7 @@
  */
 package za.co.mmagon.jwebswing.plugins.radialsvgslider;
 
+import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.attributes.GlobalAttributes;
 import za.co.mmagon.jwebswing.htmlbuilder.css.lists.ListCSS;
@@ -163,12 +164,12 @@ public class RadialSVGSlider extends Div<RadialSVGSliderChildren, RadialSVGSlide
 			int size = getRadialSliderList().getChildren().size();
 			if (size > 0)
 			{
-				getRadialSliderList().getChildren().get(0).addClass("visible");
+				getRadialSliderList().getChildren().stream().findFirst().get().addClass("visible");
 			}
 			if (size > 1)
 			{
-				getRadialSliderList().getChildren().get(1).addClass("next-slide");
-				getRadialSliderList().getChildren().get(size - 1).addClass("prev-slide");
+				getRadialSliderList().getChildren().iterator().next().addClass("next-slide");
+				getRadialSliderList().getChildren().toArray(new ComponentHierarchyBase[getRadialSliderList().getChildren().size()])[getRadialSliderList().getChildren().size() - 1].addClass("prev-slide");
 			}
 		}
 		super.preConfigure();
