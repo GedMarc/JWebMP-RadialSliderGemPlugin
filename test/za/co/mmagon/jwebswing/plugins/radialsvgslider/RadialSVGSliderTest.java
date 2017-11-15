@@ -57,6 +57,7 @@ public class RadialSVGSliderTest extends BaseTestClass
 	}
 
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testReferences()
 	{
 		Page p = getInstance();

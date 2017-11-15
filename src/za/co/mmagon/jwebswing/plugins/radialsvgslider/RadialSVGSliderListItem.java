@@ -75,6 +75,7 @@ public class RadialSVGSliderListItem extends ListItem
 	 *
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public static Div createDefaultSlide(String headerText, String defaultText, String linkUrl, String linkText)
 	{
 		Div d = new Div();
@@ -204,6 +205,7 @@ public class RadialSVGSliderListItem extends ListItem
 	 *
 	 * @param contentWrapper
 	 */
+	@SuppressWarnings("unchecked")
 	protected void setContentWrapper(Div contentWrapper)
 	{
 		this.contentWrapper = contentWrapper;
@@ -233,6 +235,7 @@ public class RadialSVGSliderListItem extends ListItem
 	 *
 	 * @param content
 	 */
+	@SuppressWarnings("unchecked")
 	public void setContent(Div content)
 	{
 		this.content = content;
@@ -330,14 +333,6 @@ public class RadialSVGSliderListItem extends ListItem
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + (getFaceBackgroundImageUrl() != null ? getFaceBackgroundImageUrl().hashCode() : 0);
-		result = 31 * result + getClipPathUniqueID().hashCode();
-		result = 31 * result + (getCircleUniqueID() != null ? getCircleUniqueID().hashCode() : 0);
-		result = 31 * result + getContentContainer().hashCode();
-		result = 31 * result + getContentWrapper().hashCode();
-		result = 31 * result + getContent().hashCode();
-		result = 31 * result + (rendered ? 1 : 0);
-		return result;
+		return super.hashCode();
 	}
 }
