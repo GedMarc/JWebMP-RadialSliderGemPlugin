@@ -100,7 +100,7 @@ public class RadialSVGSliderListItem extends ListItem
 			{
 				getContent(); //force the build of the wrapper
 			}
-			JQueryPageConfigurator.setRequired(this, true);
+			JQueryPageConfigurator.setRequired(true);
 		}
 
 		super.preConfigure();
