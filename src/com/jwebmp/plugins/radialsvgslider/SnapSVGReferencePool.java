@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.radialsvgslider;
+package com.jwebmp.plugins.radialsvgslider;
 
-import za.co.mmagon.jwebswing.base.references.CSSReference;
-import za.co.mmagon.jwebswing.base.references.JavascriptReference;
-import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
+import com.jwebmp.base.references.CSSReference;
+import com.jwebmp.base.references.JavascriptReference;
+import com.jwebmp.base.servlets.interfaces.ReferencePool;
 
 /**
  * Default reference pool structure
@@ -29,17 +29,29 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
 public enum SnapSVGReferencePool implements ReferencePool
 {
 	SnapSVG(new JavascriptReference("AdobeSnapSVG", 0.41, "bower_components/Snap.svg/dist/snap.svg.js", 15), null);
-	
+
 	private JavascriptReference javaScriptReference;
 	private CSSReference cssReference;
-	
+
 	SnapSVGReferencePool()
 	{
 	}
-	
+
 	SnapSVGReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
 	{
 		this.javaScriptReference = javaScriptReference;
+		this.cssReference = cssReference;
+	}
+
+	@Override
+	public CSSReference getCssReference()
+	{
+		return cssReference;
+	}
+
+	@Override
+	public void setCssReference(CSSReference cssReference)
+	{
 		this.cssReference = cssReference;
 	}
 
@@ -53,17 +65,5 @@ public enum SnapSVGReferencePool implements ReferencePool
 	public void setJavaScriptReference(JavascriptReference javaScriptReference)
 	{
 		this.javaScriptReference = javaScriptReference;
-	}
-
-	@Override
-	public CSSReference getCssReference()
-	{
-		return cssReference;
-	}
-
-	@Override
-	public void setCssReference(CSSReference cssReference)
-	{
-		this.cssReference = cssReference;
 	}
 }

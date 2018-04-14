@@ -14,27 +14,38 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.radialsvgslider;
+package com.jwebmp.plugins.radialsvgslider;
 
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.base.html.interfaces.AttributeDefinitions;
 
 /**
- * All the options for the tooltip library
- * <p>
- *
  * @author GedMarc
  * @version 1.0
- * 		<p>
- * 		<p>
- * @since Mar 4, 2015
+ * @since Oct 24, 2016
  */
-class RadialSVGSliderOptions extends JavaScriptPart
+public enum RadialSVGSliderListAttributes
+		implements AttributeDefinitions
 {
+	Radius1("data-radius1"),
+	Radius2("data-radius2"),
+	CenterX1("data-centerx1"),
+	CenterX2("data-centerx2");
+	private final String name;
 
-	private static final long serialVersionUID = 1L;
-
-	RadialSVGSliderOptions()
+	RadialSVGSliderListAttributes(String name)
 	{
-		//nothing needed
+		this.name = name;
+	}
+
+	@Override
+	public boolean isKeyword()
+	{
+		return false;
+	}
+
+	@Override
+	public String toString()
+	{
+		return name;
 	}
 }

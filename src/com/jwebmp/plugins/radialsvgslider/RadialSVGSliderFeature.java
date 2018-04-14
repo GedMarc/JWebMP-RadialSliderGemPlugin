@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.radialsvgslider;
+package com.jwebmp.plugins.radialsvgslider;
 
-import za.co.mmagon.jwebswing.Component;
-import za.co.mmagon.jwebswing.Feature;
-import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.Component;
+import com.jwebmp.Feature;
+import com.jwebmp.base.html.interfaces.GlobalFeatures;
 
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
@@ -27,7 +27,9 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
  * @version 1.0
  * @since 2013/01/16
  */
-public class RadialSVGSliderFeature extends Feature<RadialSVGSliderOptions, RadialSVGSliderFeature> implements RadialSVGSliderFeatures, GlobalFeatures
+public class RadialSVGSliderFeature
+		extends Feature<RadialSVGSliderOptions, RadialSVGSliderFeature>
+		implements RadialSVGSliderFeatures, GlobalFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -49,26 +51,12 @@ public class RadialSVGSliderFeature extends Feature<RadialSVGSliderOptions, Radi
 		getCssReferences().add(RadialSVGSliderReferencePool.RadialSVG.getCssReference());
 	}
 
-	/**
-	 * Returns all the tooltip options
-	 * <p>
-	 *
-	 * @return
-	 */
 	@Override
-	public RadialSVGSliderOptions getOptions()
+	public int hashCode()
 	{
-		if (options == null)
-		{
-			options = new RadialSVGSliderOptions();
-		}
-		return options;
-	}
-
-	@Override
-	public void assignFunctionsToComponent()
-	{
-		//Nothing Needed
+		int result = super.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
 	}
 
 	@Override
@@ -92,11 +80,25 @@ public class RadialSVGSliderFeature extends Feature<RadialSVGSliderOptions, Radi
 		return getOptions().equals(that.getOptions());
 	}
 
+	/**
+	 * Returns all the tooltip options
+	 * <p>
+	 *
+	 * @return
+	 */
 	@Override
-	public int hashCode()
+	public RadialSVGSliderOptions getOptions()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		if (options == null)
+		{
+			options = new RadialSVGSliderOptions();
+		}
+		return options;
+	}
+
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		//Nothing Needed
 	}
 }

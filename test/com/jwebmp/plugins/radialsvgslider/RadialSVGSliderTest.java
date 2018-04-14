@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 GedMarc
+ * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,17 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.radialsvgslider;
+package com.jwebmp.plugins.radialsvgslider;
 
+import com.jwebmp.BaseTestClass;
+import com.jwebmp.Page;
+import com.jwebmp.base.html.Div;
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.jwebswing.BaseTestClass;
-import za.co.mmagon.jwebswing.Page;
-import za.co.mmagon.jwebswing.base.html.Div;
 
 /**
  * @author GedMarc
  */
-public class RadialSVGSliderTest extends BaseTestClass
+public class RadialSVGSliderTest
+		extends BaseTestClass
 {
 
 	public RadialSVGSliderTest()
@@ -61,7 +62,8 @@ public class RadialSVGSliderTest extends BaseTestClass
 	public void testReferences()
 	{
 		Page p = getInstance();
-		p.getBody().add(new RadialSVGSlider());
+		p.getBody()
+		 .add(new RadialSVGSlider());
 		System.out.println(p.toString(true));
 	}
 

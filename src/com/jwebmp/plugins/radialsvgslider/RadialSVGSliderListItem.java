@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.radialsvgslider;
+package com.jwebmp.plugins.radialsvgslider;
 
-import za.co.mmagon.jwebswing.base.html.*;
-import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
-import za.co.mmagon.jwebswing.utilities.GUIDGenerator;
+import com.jwebmp.base.html.*;
+import com.jwebmp.plugins.jquery.JQueryPageConfigurator;
+import com.jwebmp.utilities.GUIDGenerator;
 
 /**
  * A default SVG slider list item(face) that renders
@@ -26,7 +26,8 @@ import za.co.mmagon.jwebswing.utilities.GUIDGenerator;
  * @author GedMarc
  * @since Oct 26, 2016
  */
-public class RadialSVGSliderListItem extends ListItem
+public class RadialSVGSliderListItem
+		extends ListItem
 {
 
 	private static final long serialVersionUID = 1L;
@@ -91,6 +92,26 @@ public class RadialSVGSliderListItem extends ListItem
 		return d;
 	}
 
+	/**
+	 * Generates the SVG syntax for the face
+	 *
+	 * @return
+	 */
+	@Override
+	protected StringBuilder renderBeforeChildren()
+	{
+		if (!rendered)
+		{
+			rendered = true;
+			return new StringBuilder(
+					getNewLine() + getCurrentTabIndentString() + "\t" + "<div class=\"svg-wrapper\">" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "<svg viewBox=\"0 0 1400 800\">" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "<title>Animated SVG</title>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "<defs>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "<clipPath id=\"" + clipPathUniqueID + "\">" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "\t" + "<circle id=\"" + circleUniqueID + "\" cx=\"110\" cy=\"400\" r=\"1364\"/>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "</clipPath>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "</defs>" + getNewLine() + getCurrentTabIndentString() + "" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "<image height='800px' width=\"1400px\" clip-path=\"url(#" + clipPathUniqueID + ")\" xlink:href=\"" + getFaceBackgroundImageUrl() + "\"></image>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "</svg>" + getNewLine() + getCurrentTabIndentString() + "\t" + "</div>" + getNewLine());
+		}
+		else
+		{
+			return null;
+		}
+	}
+
 	@Override
 	public void preConfigure()
 	{
@@ -107,54 +128,46 @@ public class RadialSVGSliderListItem extends ListItem
 	}
 
 	/**
-	 * Generates the SVG syntax for the face
+	 * Returns the content. Never null
 	 *
 	 * @return
 	 */
-	@Override
-	protected StringBuilder renderBeforeChildren()
+	public Div getContent()
 	{
-		if (!rendered)
+		if (content == null)
 		{
-			rendered = true;
-			return new StringBuilder(getNewLine()
-					                         + getCurrentTabIndentString() + "\t" + "<div class=\"svg-wrapper\">" + getNewLine()
-					                         + getCurrentTabIndentString() + "\t" + "\t" + "<svg viewBox=\"0 0 1400 800\">" + getNewLine()
-					                         + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "<title>Animated SVG</title>" + getNewLine()
-					                         + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "<defs>" + getNewLine()
-					                         + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "<clipPath id=\"" + clipPathUniqueID + "\">" + getNewLine()
-					                         + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "\t" + "<circle id=\"" + circleUniqueID + "\" cx=\"110\" cy=\"400\" r=\"1364\"/>" + getNewLine()
-					                         + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "</clipPath>" + getNewLine()
-					                         + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "</defs>" + getNewLine()
-					                         + getCurrentTabIndentString() + "" + getNewLine()
-					                         + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "<image height='800px' width=\"1400px\" clip-path=\"url(#" + clipPathUniqueID + ")\" xlink:href=\"" + getFaceBackgroundImageUrl() + "\"></image>" + getNewLine()
-					                         + getCurrentTabIndentString() + "\t" + "\t" + "</svg>" + getNewLine()
-					                         + getCurrentTabIndentString() + "\t" + "</div>" + getNewLine());
+			setContent(new Div());
 		}
-		else
+		return content;
+	}
+
+	/**
+	 * Sets the content.
+	 *
+	 * @param content
+	 */
+	@SuppressWarnings("unchecked")
+	public void setContent(Div content)
+	{
+		this.content = content;
+		if (this.content != null)
 		{
-			return null;
+			getContentWrapper().add(this.content);
 		}
 	}
 
 	/**
-	 * Returns the background image URL assigned
+	 * Returns the contentContainer wrapper
 	 *
 	 * @return
 	 */
-	public String getFaceBackgroundImageUrl()
+	protected Div getContentWrapper()
 	{
-		return faceBackgroundImageUrl;
-	}
-
-	/**
-	 * Sets the face background image URL
-	 *
-	 * @param faceBackgroundImageUrl
-	 */
-	public void setFaceBackgroundImageUrl(String faceBackgroundImageUrl)
-	{
-		this.faceBackgroundImageUrl = faceBackgroundImageUrl;
+		if (contentWrapper == null)
+		{
+			setContentWrapper(new Div());
+		}
+		return contentWrapper;
 	}
 
 	/**
@@ -187,20 +200,6 @@ public class RadialSVGSliderListItem extends ListItem
 	}
 
 	/**
-	 * Returns the contentContainer wrapper
-	 *
-	 * @return
-	 */
-	protected Div getContentWrapper()
-	{
-		if (contentWrapper == null)
-		{
-			setContentWrapper(new Div());
-		}
-		return contentWrapper;
-	}
-
-	/**
 	 * Sets the contentContainer wrapper
 	 *
 	 * @param contentWrapper
@@ -217,32 +216,23 @@ public class RadialSVGSliderListItem extends ListItem
 	}
 
 	/**
-	 * Returns the content. Never null
+	 * Returns the background image URL assigned
 	 *
 	 * @return
 	 */
-	public Div getContent()
+	public String getFaceBackgroundImageUrl()
 	{
-		if (this.content == null)
-		{
-			setContent(new Div());
-		}
-		return content;
+		return faceBackgroundImageUrl;
 	}
 
 	/**
-	 * Sets the content.
+	 * Sets the face background image URL
 	 *
-	 * @param content
+	 * @param faceBackgroundImageUrl
 	 */
-	@SuppressWarnings("unchecked")
-	public void setContent(Div content)
+	public void setFaceBackgroundImageUrl(String faceBackgroundImageUrl)
 	{
-		this.content = content;
-		if (this.content != null)
-		{
-			getContentWrapper().add(this.content);
-		}
+		this.faceBackgroundImageUrl = faceBackgroundImageUrl;
 	}
 
 	/**

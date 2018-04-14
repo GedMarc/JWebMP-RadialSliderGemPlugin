@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.radialsvgslider;
+package com.jwebmp.plugins.radialsvgslider;
 
-import za.co.mmagon.jwebswing.Page;
-import za.co.mmagon.jwebswing.PageConfigurator;
-import za.co.mmagon.jwebswing.plugins.PluginInformation;
+import com.jwebmp.Page;
+import com.jwebmp.PageConfigurator;
+import com.jwebmp.plugins.PluginInformation;
 
 /**
  * @author GedMarc
@@ -37,9 +37,9 @@ import za.co.mmagon.jwebswing.plugins.PluginInformation;
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/RadialSliderGemPlugin.jar/download",
 		pluginIconUrl = "bower_components/radial-svg-slider-jwebswing/example.png",
 		pluginIconImageUrl = "bower_components/radial-svg-slider-jwebswing/example.png",
-		pluginLastUpdatedDate = "2017/03/04"
-)
-public class RadialSVGSliderGemPageConfigurator extends PageConfigurator
+		pluginLastUpdatedDate = "2017/03/04")
+public class RadialSVGSliderGemPageConfigurator
+		extends PageConfigurator
 {
 
 	private static final long serialVersionUID = 1L;

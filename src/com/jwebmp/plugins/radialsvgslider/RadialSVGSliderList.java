@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -14,12 +14,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.radialsvgslider;
+package com.jwebmp.plugins.radialsvgslider;
 
-import za.co.mmagon.jwebswing.base.html.List;
-import za.co.mmagon.jwebswing.base.html.interfaces.children.ListChildren;
-import za.co.mmagon.jwebswing.htmlbuilder.css.measurement.MeasurementCSS;
-import za.co.mmagon.jwebswing.htmlbuilder.css.padding.PaddingCSS;
+import com.jwebmp.base.html.List;
+import com.jwebmp.base.html.interfaces.children.ListChildren;
+import com.jwebmp.htmlbuilder.css.measurement.MeasurementCSS;
+import com.jwebmp.htmlbuilder.css.padding.PaddingCSS;
 
 /**
  * The data attributes for the radial
@@ -29,7 +29,9 @@ import za.co.mmagon.jwebswing.htmlbuilder.css.padding.PaddingCSS;
  * @since Oct 24, 2016
  */
 @PaddingCSS(PaddingLeft = @MeasurementCSS(0))
-public class RadialSVGSliderList extends List<ListChildren, RadialSVGSliderListAttributes, RadialSVGSliderEvents, RadialSVGSliderList> implements RadialSVGSliderChildren
+public class RadialSVGSliderList
+		extends List<ListChildren, RadialSVGSliderListAttributes, RadialSVGSliderEvents, RadialSVGSliderList>
+		implements RadialSVGSliderChildren
 {
 
 	private static final long serialVersionUID = 1L;
