@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.radialsvgslider;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.Page;
 import com.jwebmp.base.html.Div;
 import org.junit.jupiter.api.Test;
@@ -25,7 +24,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class RadialSVGSliderTest
-		extends BaseTestClass
+
 {
 
 	public RadialSVGSliderTest()
@@ -61,7 +60,7 @@ public class RadialSVGSliderTest
 	@SuppressWarnings("unchecked")
 	public void testReferences()
 	{
-		Page p = getInstance();
+		Page p = new Page();
 		p.getBody()
 		 .add(new RadialSVGSlider());
 		System.out.println(p.toString(true));
