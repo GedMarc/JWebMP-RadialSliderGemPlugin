@@ -26,19 +26,19 @@ import com.jwebmp.base.servlets.interfaces.ReferencePool;
  * @author GedMarc
  * @since 20 Apr 2016
  */
-public enum RadialSVGSliderReferencePool implements ReferencePool
+public enum SnapSVGReferencePool
+		implements ReferencePool
 {
-	RadialSVG(new JavascriptReference("RadialSVGJs", 1.0, "bower_components/radial-svg-slider-jwebswing/js/main.js", 20),
-	          new CSSReference("RadialSVGCSS", 1.0, "bower_components/radial-svg-slider-jwebswing/css/style.css", 20));
+	SnapSVG(new JavascriptReference("AdobeSnapSVG", 0.41, "bower_components/Snap.svg/dist/snap.svg.js", 15), null);
 
 	private JavascriptReference javaScriptReference;
 	private CSSReference cssReference;
 
-	RadialSVGSliderReferencePool()
+	SnapSVGReferencePool()
 	{
 	}
 
-	RadialSVGSliderReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	SnapSVGReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
 	{
 		this.javaScriptReference = javaScriptReference;
 		this.cssReference = cssReference;

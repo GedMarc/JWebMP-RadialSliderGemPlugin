@@ -19,7 +19,7 @@ package com.jwebmp.plugins.radialsvgslider;
 import com.jwebmp.base.html.interfaces.AttributeDefinitions;
 import com.jwebmp.utilities.StaticStrings;
 
-import static com.jwebmp.utilities.StaticStrings.CHAR_DASH;
+import static com.jwebmp.utilities.StaticStrings.*;
 
 /**
  * @author GedMarc
@@ -32,7 +32,6 @@ public enum RadialSVGSliderAttributes
 	RadialSVGSliderAttributes()
 	{
 	}
-
 
 	@Override
 	public boolean isKeyword()

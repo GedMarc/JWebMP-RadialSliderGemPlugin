@@ -74,7 +74,107 @@ public class RadialSVGSlider
 	protected StringBuilder renderAfterChildren()
 	{
 		return new StringBuilder(
-				getNewLine() + getNewLine() + getCurrentTabIndentString() + "\t" + "<ul class=\"cd-radial-slider-navigation\" style=\"list-style-type:none;\">" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "<li><a href=\"#0\" class=\"next\">Next</a></li>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "<li><a href=\"#0\" class=\"prev\">Prev</a></li>" + getNewLine() + getCurrentTabIndentString() + "\t" + "</ul> <!-- .cd-radial-slider-navigation -->" + getNewLine() + getCurrentTabIndentString() + "\t" + "" + getNewLine() + getCurrentTabIndentString() + "\t" + "<div class=\"cd-round-mask\">" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "<svg viewBox=\"0 0 1400 800\">" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "<defs>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "<mask id=\"cd-left-mask\" height='800px' width=\"1400px\" x=\"0\" y=\"0\" maskUnits=\"userSpaceOnUse\">" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "\t" + "<path fill=\"white\" d=\"M0,0v800h1400V0H0z M110,460c-33.137,0-60-26.863-60-60s26.863-60,60-60s60,26.863,60,60S143.137,460,110,460z\"/>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "</mask>" + getNewLine() + getCurrentTabIndentString() + "\t" + "" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "<mask id=\"cd-right-mask\" height='800px' width=\"1400px\" x=\"0\" y=\"0\" maskUnits=\"userSpaceOnUse\">" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "\t" + "<path fill=\"white\" d=\"M0,0v800h1400V0H0z M1290,460c-33.137,0-60-26.863-60-60s26.863-60,60-60s60,26.863,60,60S1323.137,460,1290,460z\"/>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "</mask>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "</defs>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "</svg>" + getNewLine() + getCurrentTabIndentString() + "\t" + "</div>");
+				getNewLine() +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"<ul class=\"cd-radial-slider-navigation\" style=\"list-style-type:none;\">" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"<li><a href=\"#0\" class=\"next\">Next</a></li>" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"<li><a href=\"#0\" class=\"prev\">Prev</a></li>" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"</ul> <!-- .cd-radial-slider-navigation -->" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"<div class=\"cd-round-mask\">" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"<svg viewBox=\"0 0 1400 800\">" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"\t" +
+				"<defs>" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"\t" +
+				"\t" +
+				"<mask id=\"cd-left-mask\" height='800px' width=\"1400px\" x=\"0\" y=\"0\" maskUnits=\"userSpaceOnUse\">" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"\t" +
+				"\t" +
+				"\t" +
+				"<path fill=\"white\" d=\"M0,0v800h1400V0H0z M110,460c-33.137,0-60-26.863-60-60s26.863-60,60-60s60,26.863,60,60S143.137,460,110,460z\"/>" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"\t" +
+				"\t" +
+				"</mask>" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"\t" +
+				"\t" +
+				"<mask id=\"cd-right-mask\" height='800px' width=\"1400px\" x=\"0\" y=\"0\" maskUnits=\"userSpaceOnUse\">" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"\t" +
+				"\t" +
+				"\t" +
+				"<path fill=\"white\" d=\"M0,0v800h1400V0H0z M1290,460c-33.137,0-60-26.863-60-60s26.863-60,60-60s60,26.863,60,60S1323.137,460,1290,460z\"/>" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"\t" +
+				"\t" +
+				"</mask>" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"\t" +
+				"</defs>" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"\t" +
+				"</svg>" +
+				getNewLine() +
+				getCurrentTabIndentString() +
+				"\t" +
+				"</div>");
 	}
 
 	/**

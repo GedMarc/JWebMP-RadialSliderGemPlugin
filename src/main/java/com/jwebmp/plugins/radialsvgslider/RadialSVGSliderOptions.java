@@ -28,7 +28,8 @@ import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
  * 		<p>
  * @since Mar 4, 2015
  */
-class RadialSVGSliderOptions extends JavaScriptPart
+class RadialSVGSliderOptions
+		extends JavaScriptPart
 {
 
 	private static final long serialVersionUID = 1L;

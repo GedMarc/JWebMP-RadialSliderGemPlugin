@@ -104,7 +104,82 @@ public class RadialSVGSliderListItem
 		{
 			rendered = true;
 			return new StringBuilder(
-					getNewLine() + getCurrentTabIndentString() + "\t" + "<div class=\"svg-wrapper\">" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "<svg viewBox=\"0 0 1400 800\">" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "<title>Animated SVG</title>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "<defs>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "<clipPath id=\"" + clipPathUniqueID + "\">" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "\t" + "<circle id=\"" + circleUniqueID + "\" cx=\"110\" cy=\"400\" r=\"1364\"/>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "\t" + "</clipPath>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "</defs>" + getNewLine() + getCurrentTabIndentString() + "" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "\t" + "<image height='800px' width=\"1400px\" clip-path=\"url(#" + clipPathUniqueID + ")\" xlink:href=\"" + getFaceBackgroundImageUrl() + "\"></image>" + getNewLine() + getCurrentTabIndentString() + "\t" + "\t" + "</svg>" + getNewLine() + getCurrentTabIndentString() + "\t" + "</div>" + getNewLine());
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"\t" +
+					"<div class=\"svg-wrapper\">" +
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"\t" +
+					"\t" +
+					"<svg viewBox=\"0 0 1400 800\">" +
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"\t" +
+					"\t" +
+					"\t" +
+					"<title>Animated SVG</title>" +
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"\t" +
+					"\t" +
+					"\t" +
+					"<defs>" +
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"\t" +
+					"\t" +
+					"\t" +
+					"\t" +
+					"<clipPath id=\"" +
+					clipPathUniqueID +
+					"\">" +
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"\t" +
+					"\t" +
+					"\t" +
+					"\t" +
+					"\t" +
+					"<circle id=\"" +
+					circleUniqueID +
+					"\" cx=\"110\" cy=\"400\" r=\"1364\"/>" +
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"\t" +
+					"\t" +
+					"\t" +
+					"\t" +
+					"</clipPath>" +
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"\t" +
+					"\t" +
+					"\t" +
+					"</defs>" +
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"" +
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"\t" +
+					"\t" +
+					"\t" +
+					"<image height='800px' width=\"1400px\" clip-path=\"url(#" +
+					clipPathUniqueID +
+					")\" xlink:href=\"" +
+					getFaceBackgroundImageUrl() +
+					"\"></image>" +
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"\t" +
+					"\t" +
+					"</svg>" +
+					getNewLine() +
+					getCurrentTabIndentString() +
+					"\t" +
+					"</div>" +
+					getNewLine());
 		}
 		else
 		{
