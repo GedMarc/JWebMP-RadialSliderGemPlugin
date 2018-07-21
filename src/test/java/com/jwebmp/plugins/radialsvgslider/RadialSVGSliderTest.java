@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.radialsvgslider;
 
-import com.jwebmp.Page;
-import com.jwebmp.base.html.Div;
+import com.jwebmp.core.Page;
+import com.jwebmp.core.base.html.Div;
 import org.junit.jupiter.api.Test;
 
 /**

@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.radialsvgslider;
 
-import com.jwebmp.base.html.interfaces.AttributeDefinitions;
+import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
 
 /**
  * @author GedMarc

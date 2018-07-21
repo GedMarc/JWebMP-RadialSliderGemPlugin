@@ -16,9 +16,9 @@
  */
 package com.jwebmp.plugins.radialsvgslider;
 
-import com.jwebmp.base.html.*;
-import com.jwebmp.plugins.jquery.JQueryPageConfigurator;
-import com.jwebmp.utilities.GUIDGenerator;
+import com.jwebmp.core.base.html.*;
+import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
+import com.jwebmp.core.utilities.GUIDGenerator;
 
 /**
  * A default SVG slider list item(face) that renders

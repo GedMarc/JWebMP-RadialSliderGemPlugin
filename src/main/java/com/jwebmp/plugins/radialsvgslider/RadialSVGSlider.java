@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.radialsvgslider;
 
-import com.jwebmp.base.ComponentHierarchyBase;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.attributes.GlobalAttributes;
-import com.jwebmp.htmlbuilder.css.lists.ListCSS;
-import com.jwebmp.htmlbuilder.css.lists.ListStyleType;
-import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.core.base.ComponentHierarchyBase;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.htmlbuilder.css.lists.ListCSS;
+import com.jwebmp.core.htmlbuilder.css.lists.ListStyleType;
+import com.jwebmp.core.plugins.ComponentInformation;
 
 import javax.validation.constraints.NotNull;
 

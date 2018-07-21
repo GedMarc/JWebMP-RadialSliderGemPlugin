@@ -16,10 +16,10 @@
  */
 package com.jwebmp.plugins.radialsvgslider;
 
-import com.jwebmp.base.html.List;
-import com.jwebmp.base.html.interfaces.children.ListChildren;
-import com.jwebmp.htmlbuilder.css.measurement.MeasurementCSS;
-import com.jwebmp.htmlbuilder.css.padding.PaddingCSS;
+import com.jwebmp.core.base.html.List;
+import com.jwebmp.core.base.html.interfaces.children.ListChildren;
+import com.jwebmp.core.htmlbuilder.css.measurement.MeasurementCSS;
+import com.jwebmp.core.htmlbuilder.css.padding.PaddingCSS;
 
 /**
  * The data attributes for the radial
