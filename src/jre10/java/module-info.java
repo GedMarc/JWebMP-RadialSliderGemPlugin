@@ -1,3 +1,6 @@
+import com.jwebmp.core.services.IPageConfigurator;
+import com.jwebmp.plugins.radialsvgslider.RadialSVGSliderGemPageConfigurator;
+
 module com.jwebmp.plugins.radialsvgslider {
 
 	exports com.jwebmp.plugins.radialsvgslider;
@@ -8,4 +11,7 @@ module com.jwebmp.plugins.radialsvgslider {
 
 	requires java.validation;
 	requires java.logging;
+
+	provides IPageConfigurator with RadialSVGSliderGemPageConfigurator;
+
 }
