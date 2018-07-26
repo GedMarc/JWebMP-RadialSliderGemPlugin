@@ -13,5 +13,5 @@ module com.jwebmp.plugins.radialsvgslider {
 	requires java.logging;
 
 	provides IPageConfigurator with RadialSVGSliderGemPageConfigurator;
-
+	opens com.jwebmp.plugins.radialsvgslider to com.fasterxml.jackson.databind,com.jwebmp.core;
 }
