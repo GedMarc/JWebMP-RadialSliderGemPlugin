@@ -31,7 +31,7 @@ import com.jwebmp.core.htmlbuilder.css.padding.PaddingCSS;
 @PaddingCSS(PaddingLeft = @MeasurementCSS(0))
 public class RadialSVGSliderList
 		extends List<ListChildren, RadialSVGSliderListAttributes, RadialSVGSliderEvents, RadialSVGSliderList>
-		implements RadialSVGSliderChildren
+		implements RadialSVGSliderChildren<ListChildren, RadialSVGSliderList>
 {
 
 	private static final long serialVersionUID = 1L;
