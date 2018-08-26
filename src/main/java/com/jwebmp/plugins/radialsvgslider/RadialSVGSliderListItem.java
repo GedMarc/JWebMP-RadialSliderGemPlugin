@@ -26,8 +26,9 @@ import com.jwebmp.core.utilities.GUIDGenerator;
  * @author GedMarc
  * @since Oct 26, 2016
  */
-public class RadialSVGSliderListItem
-		extends ListItem
+@SuppressWarnings({"MissingClassJavaDoc", "WeakerAccess"})
+public class RadialSVGSliderListItem<J extends RadialSVGSliderListItem<J>>
+		extends ListItem<J>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -36,7 +37,13 @@ public class RadialSVGSliderListItem
 	 * The background image URL to use
 	 */
 	private String faceBackgroundImageUrl = "bower_components/radial-svg-slider-jwebswing/img/img-1.jpg";
+	/**
+	 * The clip path to use unique id
+	 */
 	private String clipPathUniqueID;
+	/**
+	 * The circles unique id
+	 */
 	private String circleUniqueID;
 
 	/**
@@ -51,6 +58,9 @@ public class RadialSVGSliderListItem
 	 * The physical content
 	 */
 	private Div content;
+	/**
+	 * If the script has been rendered
+	 */
 	private boolean rendered;
 
 	/**
@@ -74,7 +84,7 @@ public class RadialSVGSliderListItem
 	 * @param linkText
 	 * 		the text for the link
 	 *
-	 * @return
+	 * @return J
 	 */
 	@SuppressWarnings("unchecked")
 	public static Div createDefaultSlide(String headerText, String defaultText, String linkUrl, String linkText)
@@ -90,6 +100,21 @@ public class RadialSVGSliderListItem
 		d.add(p);
 		d.add(newLink);
 		return d;
+	}
+
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			if (getChildren().isEmpty())
+			{
+				getContent(); //force the build of the wrapper
+			}
+			JQueryPageConfigurator.setRequired(true);
+		}
+
+		super.preConfigure();
 	}
 
 	/**
@@ -187,19 +212,24 @@ public class RadialSVGSliderListItem
 		}
 	}
 
-	@Override
-	public void preConfigure()
+	/**
+	 * Returns the background image URL assigned
+	 *
+	 * @return
+	 */
+	public String getFaceBackgroundImageUrl()
 	{
-		if (!isConfigured())
-		{
-			if (getChildren().isEmpty())
-			{
-				getContent(); //force the build of the wrapper
-			}
-			JQueryPageConfigurator.setRequired(true);
-		}
+		return faceBackgroundImageUrl;
+	}
 
-		super.preConfigure();
+	/**
+	 * Sets the face background image URL
+	 *
+	 * @param faceBackgroundImageUrl
+	 */
+	public void setFaceBackgroundImageUrl(String faceBackgroundImageUrl)
+	{
+		this.faceBackgroundImageUrl = faceBackgroundImageUrl;
 	}
 
 	/**
@@ -291,26 +321,6 @@ public class RadialSVGSliderListItem
 	}
 
 	/**
-	 * Returns the background image URL assigned
-	 *
-	 * @return
-	 */
-	public String getFaceBackgroundImageUrl()
-	{
-		return faceBackgroundImageUrl;
-	}
-
-	/**
-	 * Sets the face background image URL
-	 *
-	 * @param faceBackgroundImageUrl
-	 */
-	public void setFaceBackgroundImageUrl(String faceBackgroundImageUrl)
-	{
-		this.faceBackgroundImageUrl = faceBackgroundImageUrl;
-	}
-
-	/**
 	 * Returns the current id given to the clip path element
 	 *
 	 * @return
@@ -351,53 +361,14 @@ public class RadialSVGSliderListItem
 	}
 
 	@Override
-	public boolean equals(Object o)
-	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!(o instanceof RadialSVGSliderListItem))
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		RadialSVGSliderListItem that = (RadialSVGSliderListItem) o;
-
-		if (rendered != that.rendered)
-		{
-			return false;
-		}
-		if (getFaceBackgroundImageUrl() != null ? !getFaceBackgroundImageUrl().equals(that.getFaceBackgroundImageUrl()) : that.getFaceBackgroundImageUrl() != null)
-		{
-			return false;
-		}
-		if (!getClipPathUniqueID().equals(that.getClipPathUniqueID()))
-		{
-			return false;
-		}
-		if (getCircleUniqueID() != null ? !getCircleUniqueID().equals(that.getCircleUniqueID()) : that.getCircleUniqueID() != null)
-		{
-			return false;
-		}
-		if (!getContentContainer().equals(that.getContentContainer()))
-		{
-			return false;
-		}
-		if (!getContentWrapper().equals(that.getContentWrapper()))
-		{
-			return false;
-		}
-		return getContent().equals(that.getContent());
-	}
-
-	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }
