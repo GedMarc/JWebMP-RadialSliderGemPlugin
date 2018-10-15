@@ -32,16 +32,16 @@ import javax.validation.constraints.NotNull;
 		pluginDependancyUniqueIDs = "jquery",
 		pluginCategories = "carousel, slider, gem, radial",
 		pluginSubtitle = "A simple, responsive slider, with a radial transition effect powered by SVG clipPath and mask elements.",
-		pluginGitUrl = "https://github.com/GedMarc/JWebSwing-RadialSliderGemPlugin",
-		pluginSourceUrl = "https://github.com/GedMarc/JWebSwing-RadialSliderGemPlugin",
-		pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-RadialSliderGemPlugin/wiki",
+		pluginGitUrl = "https://github.com/GedMarc/JWebMP-RadialSliderGemPlugin",
+		pluginSourceUrl = "https://github.com/GedMarc/JWebMP-RadialSliderGemPlugin",
+		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-RadialSliderGemPlugin/wiki",
 		pluginOriginalHomepage = "https://codyhouse.co/gem/radial-svg-slider/",
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/RadialSliderGemPlugin.jar/download",
 		pluginIconUrl = "bower_components/radial-svg-slider-jwebswing/example.png",
 		pluginIconImageUrl = "bower_components/radial-svg-slider-jwebswing/example.png",
 		pluginLastUpdatedDate = "2017/03/04")
 public class RadialSVGSliderGemPageConfigurator
-		implements IPageConfigurator
+		implements IPageConfigurator<RadialSVGSliderGemPageConfigurator>
 {
 	/**
 	 * If this configurator is enabled
