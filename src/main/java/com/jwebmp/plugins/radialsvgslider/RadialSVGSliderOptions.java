@@ -32,7 +32,6 @@ class RadialSVGSliderOptions
 		extends JavaScriptPart
 {
 
-	private static final long serialVersionUID = 1L;
 
 	RadialSVGSliderOptions()
 	{

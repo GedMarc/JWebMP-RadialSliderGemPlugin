@@ -31,7 +31,6 @@ public class RadialSVGSliderListItem<J extends RadialSVGSliderListItem<J>>
 		extends ListItem<J>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The background image URL to use

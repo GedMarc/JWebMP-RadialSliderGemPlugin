@@ -34,7 +34,6 @@ public class RadialSVGSliderList
 		implements RadialSVGSliderChildren<ListChildren, RadialSVGSliderList>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	public RadialSVGSliderList()
 	{

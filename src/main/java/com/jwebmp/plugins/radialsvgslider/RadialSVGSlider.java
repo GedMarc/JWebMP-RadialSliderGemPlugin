@@ -42,7 +42,7 @@ public class RadialSVGSlider
 		extends Div<RadialSVGSliderChildren, RadialSVGSliderAttributes, RadialSVGSliderFeatures, RadialSVGSliderEvents, RadialSVGSlider>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private RadialSVGSliderFeature feature;
 
 	@ListCSS(ListStyleType = ListStyleType.none)
@@ -63,6 +63,39 @@ public class RadialSVGSlider
 			feature = new RadialSVGSliderFeature(this);
 		}
 		return feature;
+	}
+
+	/**
+	 * Sets the classes correctly on the children
+	 */
+	@Override
+	public void preConfigure()
+	{
+		if (!isConfigured())
+		{
+			int size = getRadialSliderList().getChildren()
+			                                .size();
+			if (size > 0)
+			{
+				getRadialSliderList().getChildren()
+				                     .stream()
+				                     .findFirst()
+				                     .get()
+				                     .addClass("visible");
+			}
+			if (size > 1)
+			{
+				getRadialSliderList().getChildren()
+				                     .iterator()
+				                     .next()
+				                     .addClass("next-slide");
+				getRadialSliderList().getChildren()
+				                     .toArray(new ComponentHierarchyBase[getRadialSliderList().getChildren()
+				                                                                              .size()])[getRadialSliderList().getChildren()
+				                                                                                                             .size() - 1].addClass("prev-slide");
+			}
+		}
+		super.preConfigure();
 	}
 
 	/**
@@ -178,39 +211,6 @@ public class RadialSVGSlider
 	}
 
 	/**
-	 * Sets the classes correctly on the children
-	 */
-	@Override
-	public void preConfigure()
-	{
-		if (!isConfigured())
-		{
-			int size = getRadialSliderList().getChildren()
-			                                .size();
-			if (size > 0)
-			{
-				getRadialSliderList().getChildren()
-				                     .stream()
-				                     .findFirst()
-				                     .get()
-				                     .addClass("visible");
-			}
-			if (size > 1)
-			{
-				getRadialSliderList().getChildren()
-				                     .iterator()
-				                     .next()
-				                     .addClass("next-slide");
-				getRadialSliderList().getChildren()
-				                     .toArray(new ComponentHierarchyBase[getRadialSliderList().getChildren()
-				                                                                              .size()])[getRadialSliderList().getChildren()
-				                                                                                                             .size() - 1].addClass("prev-slide");
-			}
-		}
-		super.preConfigure();
-	}
-
-	/**
 	 * Returns the radial slider list
 	 *
 	 * @return
@@ -288,6 +288,15 @@ public class RadialSVGSlider
 	}
 
 	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		result = 31 * result + getRadialSliderList().hashCode();
+		return result;
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -310,14 +319,5 @@ public class RadialSVGSlider
 			return false;
 		}
 		return getRadialSliderList().equals(that.getRadialSliderList());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		int result = super.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		result = 31 * result + getRadialSliderList().hashCode();
-		return result;
 	}
 }

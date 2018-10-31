@@ -30,7 +30,6 @@ public class RadialSVGSliderFeature
 		extends Feature<RadialSVGSliderFeature, RadialSVGSliderOptions, RadialSVGSliderFeature>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	private RadialSVGSliderOptions options;
 
