@@ -1,9 +1,3 @@
-import com.jwebmp.core.services.IPageConfigurator;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions;
-import com.jwebmp.plugins.radialsvgslider.RadialSVGSliderGemPageConfigurator;
-import com.jwebmp.plugins.radialsvgslider.implementations.RadialSliderExclusionsModule;
-
 module com.jwebmp.plugins.radialsvgslider {
 
 	exports com.jwebmp.plugins.radialsvgslider;
@@ -16,9 +10,9 @@ module com.jwebmp.plugins.radialsvgslider {
 	requires java.logging;
 	requires com.jwebmp.guicedinjection;
 
-	provides IPageConfigurator with RadialSVGSliderGemPageConfigurator;
-	provides IGuiceScanModuleExclusions with RadialSliderExclusionsModule;
-	provides IGuiceScanJarExclusions with RadialSliderExclusionsModule;
+	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.radialsvgslider.RadialSVGSliderGemPageConfigurator;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.radialsvgslider.implementations.RadialSliderExclusionsModule;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions with com.jwebmp.plugins.radialsvgslider.implementations.RadialSliderExclusionsModule;
 
 	opens com.jwebmp.plugins.radialsvgslider to com.fasterxml.jackson.databind, com.jwebmp.core;
 }
