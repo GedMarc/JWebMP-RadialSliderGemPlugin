@@ -23,7 +23,7 @@ import com.jwebmp.core.htmlbuilder.css.lists.ListCSS;
 import com.jwebmp.core.htmlbuilder.css.lists.ListStyleType;
 import com.jwebmp.core.plugins.ComponentInformation;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * An implementation of the Radial SVG Slider.
