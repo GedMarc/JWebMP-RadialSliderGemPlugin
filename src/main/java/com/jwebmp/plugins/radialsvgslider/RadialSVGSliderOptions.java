@@ -28,8 +28,8 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
  * 		<p>
  * @since Mar 4, 2015
  */
-class RadialSVGSliderOptions
-		extends JavaScriptPart
+public class RadialSVGSliderOptions
+		extends JavaScriptPart<RadialSVGSliderOptions>
 {
 
 

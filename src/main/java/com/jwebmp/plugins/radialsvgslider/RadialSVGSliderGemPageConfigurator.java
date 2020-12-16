@@ -18,6 +18,7 @@ package com.jwebmp.plugins.radialsvgslider;
 
 import com.jwebmp.core.Page;
 import com.jwebmp.core.plugins.PluginInformation;
+import com.jwebmp.core.plugins.PluginStatus;
 import com.jwebmp.core.services.IPageConfigurator;
 
 import jakarta.validation.constraints.NotNull;
@@ -36,10 +37,15 @@ import jakarta.validation.constraints.NotNull;
 		pluginSourceUrl = "https://github.com/GedMarc/JWebMP-RadialSliderGemPlugin",
 		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-RadialSliderGemPlugin/wiki",
 		pluginOriginalHomepage = "https://codyhouse.co/gem/radial-svg-slider/",
-		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/RadialSliderGemPlugin.jar/download",
-		pluginIconUrl = "bower_components/radial-svg-slider-jwebswing/example.png",
-		pluginIconImageUrl = "bower_components/radial-svg-slider-jwebswing/example.png",
-		pluginLastUpdatedDate = "2017/03/04")
+		pluginDownloadUrl = "https://mvnrepository.com/artifact/com.jwebmp.plugins.effects/jwebmp-radial-slider-gem",
+		pluginIconUrl = "",
+		pluginIconImageUrl = "",
+		pluginLastUpdatedDate = "2017/03/04",
+		pluginGroupId = "com.jwebmp.plugins.effects",
+		pluginArtifactId = "jwebmp-radial-slider-gem",
+		pluginModuleName = "com.jwebmp.plugins.radialsvgslider",
+		pluginStatus = PluginStatus.Released
+)
 public class RadialSVGSliderGemPageConfigurator
 		implements IPageConfigurator<RadialSVGSliderGemPageConfigurator>
 {

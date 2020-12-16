@@ -81,6 +81,7 @@ public class RadialSVGSlider
 				                     .stream()
 				                     .findFirst()
 				                     .get()
+				                     .asHierarchyBase()
 				                     .addClass("visible");
 			}
 			if (size > 1)
@@ -88,6 +89,7 @@ public class RadialSVGSlider
 				getRadialSliderList().getChildren()
 				                     .iterator()
 				                     .next()
+				                     .asHierarchyBase()
 				                     .addClass("next-slide");
 				getRadialSliderList().getChildren()
 				                     .toArray(new ComponentHierarchyBase[getRadialSliderList().getChildren()
