@@ -60,7 +60,7 @@ public class RadialSVGSliderTest
 	@SuppressWarnings("unchecked")
 	public void testReferences()
 	{
-		Page p = new Page();
+		Page<?> p = new Page();
 		p.getBody()
 		 .add(new RadialSVGSlider());
 		System.out.println(p.toString(true));
